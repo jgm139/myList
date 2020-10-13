@@ -1,6 +1,6 @@
 {
-  "appId": "io.ionic.starter",
-  "appName": "myList",
+  "appId": "com.jgm139.myList",
+  "appName": "MyList",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "www",
