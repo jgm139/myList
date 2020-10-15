@@ -28,6 +28,38 @@
 
 /* CSS custom elements ~ jules */
 
+.sign-form-content {
+    --padding-start: 15px;
+    --padding-end: 15px;
+    --padding-top: 15px;
+    --padding-bottom: 15px;
+
+    .sign-form-btn {
+        margin: 16px 0px;
+    }
+
+    .error-container {
+        .error-message {
+			margin: 16px 0px;
+			display: flex;
+			color: var(--ion-color-danger);
+			font-size: 14px;
+        }
+    }
+
+    .social-auth-options {
+        .options-divider {
+            text-align: center;
+        }
+        margin-top: 30px;
+    }
+
+    .sign-in-btn-wrapper {
+        justify-content: flex-end;
+        align-items: center;
+    }
+}
+
 .my-custom-alert .alert-wrapper {
     margin: 20px;
 }
