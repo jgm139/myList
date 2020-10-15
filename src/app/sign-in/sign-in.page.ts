@@ -2,6 +2,7 @@ import { Component, NgZone, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
 import { FirebaseAuthService } from '../services/firebase-auth.service';
 
@@ -30,6 +31,7 @@ export class SignInPage {
 	constructor(
 		public angularFire: AngularFireAuth,
 		public router: Router,
+		public alertController: AlertController,
 		private ngZone: NgZone,
 		private authService: FirebaseAuthService
 	) {
@@ -52,8 +54,20 @@ export class SignInPage {
 				this.redirectLoggedUserToTabsPage();
 			} else if (result.error) {
 				this.submitError = result.error;
+				this.presentAlert();
 			}
     	});
+	}
+
+	async presentAlert() {
+		const alert = await this.alertController.create({
+		  cssClass: 'my-custom-alert',
+		  header: 'Sign In',
+		  message: this.submitError,
+		  buttons: ['OK']
+		});
+	
+		await alert.present();
 	}
 
 	// Once the auth provider finished the authentication flow, and the auth redirect completes,
@@ -70,6 +84,10 @@ export class SignInPage {
 		.then(user => {
 			this.redirectLoggedUserToTabsPage();
 		})
+		.catch(error => {
+			this.submitError = error.message;
+			this.presentAlert();
+		});
 	}
 
 	googleSignIn() {
@@ -83,8 +101,8 @@ export class SignInPage {
 			// The signed-in user info is in result.user;
 			this.redirectLoggedUserToTabsPage();
 		}).catch((error) => {
-			// Handle Errors here.
-			console.log(error);
+			this.submitError = error;
+			this.presentAlert();
 		});
 	}
 
