@@ -29,21 +29,20 @@
 /* CSS custom elements ~ jules */
 
 .sign-form-content {
-    --padding-start: 15px;
-    --padding-end: 15px;
-    --padding-top: 15px;
-    --padding-bottom: 15px;
+    --padding-start: 1em;
+    --padding-end: 1em;
+    --padding-top: 1em;
+    --padding-bottom: 1em;
 
     .sign-form-btn {
-        margin: 16px 0px;
+        margin: 1em 0px;
     }
 
     .error-container {
         .error-message {
-			margin: 16px 0px;
+			margin: 1em 0px;
 			display: flex;
 			color: var(--ion-color-danger);
-			font-size: 14px;
         }
     }
 
@@ -51,15 +50,14 @@
         .options-divider {
             text-align: center;
         }
-        margin-top: 30px;
+        margin-top: 2em;
     }
 
-    .sign-in-btn-wrapper {
-        justify-content: flex-end;
-        align-items: center;
+    .sign-form-btn-wrapper {
+        font-size: 0.6em;
     }
 }
 
 .my-custom-alert .alert-wrapper {
-    margin: 20px;
+    margin: 1.5em;
 }
