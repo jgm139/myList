@@ -40,7 +40,7 @@
 			</div>
 		</ion-list>
 
-		<ion-button class="sign-form-btn" expand="block" fill="outline" color="tertiary">
+		<ion-button class="sign-form-btn" type="submit" expand="block" color="tertiary">
 			Sign up
 		</ion-button>
 		<div class="error-container" *ngIf="submitError">
@@ -50,11 +50,9 @@
 			</div>
 		</div>
 
-		<ion-row class="sign-form-btn-wrapper">
-			<ion-button class="sign-form-btn" fill="clear" [routerLink]="['/sign-in']">
-				Already have an account?
-			</ion-button>
-		</ion-row>
+		<ion-button class="sign-form-btn-wrapper" expand="block" fill="outline" color="tertiary" [routerLink]="['/sign-in']">
+			Already have an account?
+		</ion-button>
 		
 	</form>
 
